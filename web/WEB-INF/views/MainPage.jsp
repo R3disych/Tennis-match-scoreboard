@@ -94,7 +94,7 @@
 
         <!-- Центральное изображение -->
         <div class="center-image">
-            <img src="${pageContext.request.contextPath}tennis.webp" alt="Логотип игры">
+            <img src="${pageContext.request.contextPath}/images/mainimg.jpg" alt="Логотип игры">
         </div>
 
         <!-- Правая ссылка - Завершенные матчи -->
