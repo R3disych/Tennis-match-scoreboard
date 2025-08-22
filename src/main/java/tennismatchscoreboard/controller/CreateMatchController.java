@@ -19,7 +19,14 @@ public class CreateMatchController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-        
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String player1Name = request.getParameter("player1");
+        String player2Name = request.getParameter("player2");
+
+        if (player1Name.equals(player2Name)) {
+            request.setAttribute("message", "Player 1 and Player 2 names are the same.");
+            request.getRequestDispatcher("/WEB-INF/views/NewMatch.jsp").forward(request, response);
+            return;
+        }
     }
 }
