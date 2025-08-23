@@ -6,16 +6,15 @@ import jakarta.persistence.*;
 @Table(name = "tennis_match")
 public class TennisMatch {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "id")
-    @Column(name = "first_player")
+    @JoinColumn(name = "first_player_id")
     private Player firstPlayer;
 
     @ManyToOne
-    @JoinColumn(name = "id")
-    @Column(name = "second_player")
+    @JoinColumn(name = "second_player_id")
     private Player secondPlayer;
 
     @Column(name = "score_first_player")

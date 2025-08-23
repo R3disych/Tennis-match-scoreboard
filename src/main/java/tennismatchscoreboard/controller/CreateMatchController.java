@@ -5,12 +5,15 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import tennismatchscoreboard.entity.TennisMatch;
+import tennismatchscoreboard.service.PlayerService;
+import tennismatchscoreboard.service.TennisMatchService;
 
 import java.io.IOException;
 
 @WebServlet(
         name = "CreateMatch",
-        urlPatterns = {"/new-game"}
+        urlPatterns = {"/new-match"}
 )
 public class CreateMatchController extends HttpServlet {
     @Override
@@ -28,5 +31,9 @@ public class CreateMatchController extends HttpServlet {
             request.getRequestDispatcher("/WEB-INF/views/NewMatch.jsp").forward(request, response);
             return;
         }
+
+        TennisMatch tennisMatch = TennisMatchService.createTennisMatch(
+                PlayerService.findOrCreate(player1Name),
+                PlayerService.findOrCreate(player2Name));
     }
 }

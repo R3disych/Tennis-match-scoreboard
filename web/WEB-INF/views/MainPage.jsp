@@ -89,7 +89,7 @@
             <div class="icon">🎮</div>
             <h3>Новая игра</h3>
             <p>Начните новое захватывающее приключение</p>
-            <a href="${pageContext.request.contextPath}/new-game">Играть</a>
+            <a href="${pageContext.request.contextPath}/new-match">Играть</a>
         </div>
 
         <!-- Центральное изображение -->

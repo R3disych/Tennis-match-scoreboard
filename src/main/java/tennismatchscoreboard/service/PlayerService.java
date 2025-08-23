@@ -15,6 +15,7 @@ public class PlayerService {
         String queryString = "FROM Player WHERE name = :playerName";
         Query queryObject = session.createQuery(queryString);
         queryObject.setParameter("playerName", playerName);
+
         Player player;
         try {
             player = (Player) queryObject.getSingleResult();
@@ -24,6 +25,9 @@ public class PlayerService {
 
             session.beginTransaction();
             session.persist(player);
+            int id = player.getId();
+            player.setId(id);
+
             session.getTransaction().commit();
         }
         session.close();
