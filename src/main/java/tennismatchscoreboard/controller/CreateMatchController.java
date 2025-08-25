@@ -35,5 +35,7 @@ public class CreateMatchController extends HttpServlet {
         TennisMatch tennisMatch = TennisMatchService.createTennisMatch(
                 PlayerService.findOrCreate(player1Name),
                 PlayerService.findOrCreate(player2Name));
+
+        response.sendRedirect(request.getContextPath() + "/match-score?matchId=" + tennisMatch.getId());
     }
 }
