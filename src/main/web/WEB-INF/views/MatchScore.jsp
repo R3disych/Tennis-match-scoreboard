@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 <head>
     <title>Теннисный матч</title>
@@ -205,12 +205,12 @@
         if (confirm('Завершить матч?')) {
             // AJAX запрос для завершения матча
             console.log('Finish match:', matchId);
-            window.location.href = '${pageContext.request.contextPath}/';
+            window.location.href = '../..';
         }
     }
 
     function goToHome() {
-        window.location.href = '${pageContext.request.contextPath}/';
+        window.location.href = '../..';
     }
 </script>
 </body>

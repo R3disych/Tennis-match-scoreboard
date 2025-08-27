@@ -8,7 +8,7 @@ import tennismatchscoreboard.entity.Player;
 import tennismatchscoreboard.util.HibernateUtil;
 
 public class PlayerService {
-    private static final SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+    private static SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
     public static Player findOrCreate(String playerName) {
         Session session = sessionFactory.openSession();

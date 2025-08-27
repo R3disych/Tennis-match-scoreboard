@@ -9,9 +9,17 @@
     <property name="connection.username">postgres</property>
     <property name="connection.password">pipipapa</property>
 
+    <property name="hibernate.connection.pool_size">10</property>
+    <property name="hibernate.connection.autocommit">false</property>
+
+    <!-- SQL dialect -->
+    <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+    <!-- Echo all executed SQL to stdout -->
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.format_sql">true</property>
+
     <mapping class="tennismatchscoreboard.entity.Player"/>
     <mapping class="tennismatchscoreboard.entity.TennisMatch"/>
-    <!-- DB schema will be updated if needed -->
-    <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
   </session-factory>
 </hibernate-configuration>

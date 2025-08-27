@@ -23,6 +23,13 @@ public class TennisMatch {
     @Column(name = "score_second_player")
     private int scoreSecondPlayer;
 
+    @Enumerated(EnumType.STRING)
+    private MatchStatus match_status = MatchStatus.IN_PROGRESS;
+
+    public enum MatchStatus {
+        IN_PROGRESS, COMPLETED, CANCELLED
+    }
+
     public TennisMatch() {
 
     }
@@ -73,5 +80,13 @@ public class TennisMatch {
 
     public void setScoreSecondPlayer(int scoreSecondPlayer) {
         this.scoreSecondPlayer = scoreSecondPlayer;
+    }
+
+    public MatchStatus getMatch_status() {
+        return match_status;
+    }
+
+    public void completeMatch() {
+        match_status = MatchStatus.COMPLETED;
     }
 }
